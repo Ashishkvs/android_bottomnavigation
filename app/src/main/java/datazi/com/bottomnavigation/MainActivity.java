@@ -6,15 +6,24 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+    ListView listView;
+    String [] listItem;
+    TextView textView;
 
      @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         //by default load fragment
         loadFragment(new HomeFragment());
-    }
+
+     }
 
     //LOAD FRAGMENT DYNAMICALLY
     private boolean loadFragment(Fragment fragment){
